@@ -1,0 +1,21 @@
+[package]
+name = "mustafif_com"
+version = "0.1.0"
+edition = "2021"
+description = "The Official mustafif.com web application"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.79"
+mkblogs_rss = { git = "https://github.com/Mustafif/MKBlogsRSS", version = "0.1.0" }
+rocket = "0.5.0"
+rocket_dyn_templates = { version = "0.1.0", features = ["tera"] }
+serde = { version = "1.0.195", features = ["derive"] }
+tokio = { version = "1.35.1", features = ["full"] }
+
+[profile.release]
+strip = true  # Automatically strip symbols from the binary.
+lto = true # Enables link time optimizations to optimize at link-stage
+codegen-units = 1 # allows for maximum size reduction optimizations
+panic = "abort" # reduces size of panic unwind backtrace
