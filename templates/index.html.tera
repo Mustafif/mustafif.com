@@ -1,53 +1,749 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustafif Khan</title>
-    <meta name="description" content="Mustafif Khan Official Website">
+    <head>
+        {% include "header" %}
+        <style>
+        body, h1,h2,h3,h4,h5,h6 {font-family: "Courier New", sans-serif; }
+        .w3-row-padding img {margin-bottom: 12px}
+        .bgimg {
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-image: url('/assets/headshot.jpg');
+          min-height: 100%;
+        }
+        /* Dark Mode */
+body.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
 
-    <link rel="preload"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    </noscript>
+h1, h2 {
+    color: inherit; /* Inherit text color from the parent (body) */
+}
 
-    <link rel="preload"
-        href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    </noscript>
+body.dark-mode h1, body.dark-mode h2 {
+    color: white; /* Text color for h1 and h2 in dark mode */
+}
 
-    <link rel="preload" href="https://www.w3schools.com/w3css/4/w3.css"
-        as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    </noscript>
+#darkModeToggle {
+    position: absolute;
+    margin-right: 20px;
+}
+        /* Light mode styles for w3-card-4 */
+        .w3-card-4 {
+            background-color: #fff; /* Set the background color for light mode */
+            color: #333; /* Set the text color for light mode */
+            /* Add any other light mode styles as needed */
+        }
 
-    <link rel="preload" href="/assets/style.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="/assets/style.css">
-    </noscript>
-</head>
-<body>
-    <h1>Dev To Articles</h1>
-    <ul>
-    {% for article in devto_articles %}
-        <li><a href="{{article.link}}">{{article.title}}</a></li>
-    {% endfor %}
-    </ul>
-    <h1>MoKa Articles</h1>
-    <ul>
-    {% for article in moka_articles %}
-        <li><a href="{{article.link}}">{{article.title}}</a></li>
-    {% endfor %}
-    </ul>
-    <img src="/assets/headshot.jpg">
-</body>
-</html>
+        /* Dark mode styles for w3-card-4 */
+        body.dark-mode .w3-card-4 {
+                background-color: #333; /* Set the background color for dark mode */
+                color: #fff; /* Set the text color for dark mode */
+                /* Add any other dark mode styles as needed */
+            }
+            .course-list {
+                list-style: none;
+                padding: 0;
+            }
+    
+            .course-item {
+                margin-bottom: 20px;
+            }
+    
+            .course-icon {
+                font-size: 24px;
+                margin-right: 10px;
+            }
+
+            .skill-list {
+                list-style: none;
+                padding: 0;
+            }
+    
+            .skill-item {
+                margin-bottom: 20px;
+            }
+    
+            .skill-icon {
+                font-size: 24px;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Sidebar with image -->
+        <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+            <div class="bgimg"></div>
+        </nav>
+
+        {% include "nav" %}
+
+        <!-- Page Content -->
+        <div class="w3-main w3-padding-large" style="margin-left:40%">
+
+            <!-- Menu icon to open sidebar -->
+            <span
+                class="w3-button w3-top w3-xxlarge w3-text-grey w3-hover-text-black"
+                style="width:auto;right:0;" onclick="openNav()"><i
+                    class="fa fa-bars"></i></span>
+
+            <button id="darkModeToggle" class="w3-button">
+                <i id="darkModeIcon" class="fas fa-moon"></i>
+            </button>
+
+            <!-- Header -->
+            <header class="w3-container w3-center w3-mobile"
+                style="padding:128px 16px"
+                id="home">
+                <h1 class="w3-jumbo"><b>Mustafif Khan</b></h1>
+                <p>Canadian Author/Publisher and Systems Programmer</p>
+                <img src="/assets/headshot.jpg"
+                    class="w3-image w3-hide-large w3-hide-small w3-round"
+                    style="display:block;width:60%;margin:auto;">
+                <img src="/assets/headshot.jpg"
+                    class="w3-image w3-hide-large w3-hide-medium w3-round"
+                    width="1000" height="1333">
+                {# <button
+                    class="w3-button w3-light-grey w3-padding-large w3-margin-top">
+                    <i class="fa fa-download"></i> Download Resume
+                </button> #}
+            </header>
+
+            <!-- About Section -->
+            <div class="w3-content w3-justify w3-padding w3-mobile"
+                id="about">
+                <h2>About</h2>
+                <hr class="w3-opacity">
+
+                <p>
+                    Hello there! It's my pleasure to introduce myself to you. My
+                    name is Mustafif Khan, and I am the founder of MoKa Reads,
+                    which I'm extremely proud of. Additionally, I am a Canadian
+                    author and publisher, and my focus is primarily on the field
+                    of systems programming and memory safety.
+                </p>
+
+                <p>
+                    From the moment I discovered web development, I was
+                    completely fascinated by it and felt the urge to learn more
+                    about it. I started my programming journey by learning basic
+                    HTML/CSS, the building blocks of web development. I felt
+                    confident enough to take on bigger projects as my knowledge
+                    grew. That's when I created my first major project, The MK
+                    Reference Library, using PHP. Although it was a challenging
+                    experience and still gives me occasional nightmares, it
+                    helped me to develop my skills further.
+                </p>
+
+                <p>
+                    I mainly focus on backend development using the Rocket
+                    crate, a powerful and efficient web framework for the Rust
+                    programming language. I use Tera templates for my front end,
+                    allowing me to create dynamic web pages easily. I am
+                    constantly learning and refining my skills to become even
+                    more proficient in web development.
+                </p>
+
+                <p>
+                    As I progressed in my programming journey, I found myself
+                    drawn towards the intricacies of systems programming,
+                    particularly due to my interest in the Linux Kernel. I have
+                    since expanded my knowledge and skills in this area. I am
+                    fascinated by the challenges posed by programming languages
+                    such as Rust, C, C++, and Zig and their different approaches
+                    to ensuring memory safety.
+                </p>
+
+                <p>
+                    Rust, for instance, has gained popularity for its focus on
+                    safety and preventing common programming errors such as null
+                    pointer dereferences and buffer overflows. C and C++, on the
+                    other hand, are known for their low-level control and
+                    performance but are infamous for memory-related bugs. Zig, a
+                    relatively new language, seeks to combine the best of both
+                    worlds by providing low-level control similar to C and
+                    offering safety features like Rust.
+                </p>
+
+                <p>
+                    The various discussions around memory safety and the role of
+                    programming languages in ensuring it are also of great
+                    interest to me. It's fascinating to see the different
+                    perspectives and approaches taken by developers.
+                    Understanding these nuances is key to making informed
+                    decisions while programming and producing reliable, secure,
+                    and efficient systems.
+                </p>
+
+                <p>
+                    I am passionate about creating efficient and elegant code,
+                    which has led me to publish my latest book,
+                    "Rust for C++ Programmers." The book is intended to bridge
+                    the gap between two powerful programming languages and
+                    introduce fellow programmers to Rust's unique capabilities
+                    and paradigms.
+                </p>
+
+                <p>
+                    Additionally, I aim to promote awareness of the Zig
+                    programming language through my upcoming book, Zig
+                    Unleashed. This will be my first book with further editions
+                    for each new version, except patches (e.g., v0.11.1). This
+                    will help developers from backgrounds in C, C++, and Rust to
+                    bring Zig more into the mainstream.
+                </p>
+
+                <p>
+                    My interests in programming and poetry enable me to delve
+                    into the intricacies of life and the human experience. I
+                    aspire to create work that motivates others to pursue their
+                    own paths of self-discovery and development. Thank you for
+                    taking the time to learn more about me.
+                </p>
+                    <!-- End About Section -->
+                </div>
+                <div class="w3-padding-32 w3-content" id="education">
+                    <h2 class="w3-text-grey">Education</h2>
+                    <hr class="w3-opacity">
+
+                    <!-- Toronto Metropolitan University, Bachelors of Science -->
+                    <div>
+                        <h4>Bachelors of Science in Financial Mathematics</h4>
+                        <p class="w3-opacity">Toronto Metropolitan University,
+                            Toronto, Ontario | Date: 2021 - Present</p>
+                        <p>Minor in Computer Science</p>
+                    </div>
+                </div>
+
+                <div class="w3-padding-32 w3-content" id="my-skills">
+                <h2>My Skills</h2>
+                <hr class="w3-opacity">
+
+                <div class="w3-row-padding w3-mobile">
+                    <div>
+                        <!-- Programming Languages -->
+                        <h3 class="w3-center">Programming</h3>
+                        <div class="w3-row w3-mobile">
+                            <!-- Rust -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i class="fab fa-rust w3-xxxlarge"></i>
+                                    <p class="w3-xlarge">Rust</p>
+                                </div>
+                            </div>
+
+                            <!-- Rocket -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i class="fas fa-rocket w3-xxxlarge"></i>
+                                    <p class="w3-xlarge">Rocket</p>
+                                </div>
+                            </div>
+
+                            <!-- Zig -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i
+                                        class="devicon-zig-original w3-xxxlarge"></i>
+                                    <p class="w3-xlarge">Zig</p>
+                                </div>
+                            </div>
+
+                            <!-- C -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i class="devicon-c-plain w3-xxxlarge"></i>
+                                    <p class="w3-xlarge">C</p>
+                                </div>
+                            </div>
+
+                            <!-- C++ -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i
+                                        class="devicon-cplusplus-plain w3-xxxlarge"></i>
+                                    <p class="w3-xlarge">C++</p>
+                                </div>
+                            </div>
+
+                            <!-- Bash -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i
+                                        class="devicon-bash-plain w3-xxxlarge"></i>
+                                    <p class="w3-xlarge">Bash</p>
+                                </div>
+                            </div>
+
+                            <!-- Git -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i
+                                        class="devicon-git-plain w3-xxxlarge"></i>
+                                    <p class="w3-xlarge">Git</p>
+                                </div>
+                            </div>
+
+                            <!-- GitHub -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i class="fab fa-github w3-xxxlarge"></i>
+                                    <p class="w3-xlarge">GitHub</p>
+                                </div>
+                            </div>
+
+                            <!-- Linux -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i
+                                        class="devicon-linux-plain w3-xxxlarge"></i>
+                                    <p class="w3-xlarge">Linux</p>
+                                </div>
+                            </div>
+                            <!-- Markdown -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i class="fab fa-markdown w3-xxxlarge"></i>
+                                    <p class="w3-xlarge">Markdown</p>
+                                </div>
+                            </div>
+
+                            <!-- HTML/CSS -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i class="fab fa-html5 w3-xxxlarge"></i>
+                                    <p class="w3-xlarge">HTML/CSS</p>
+                                </div>
+                            </div>
+
+                            <!-- LaTeX -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i
+                                        class="devicon-latex-original w3-xxxlarge"></i>
+                                    <p class="w3-xlarge">LaTeX</p>
+                                </div>
+                            </div>
+
+                            <!-- MATLAB -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i
+                                        class="devicon-matlab-plain w3-xxxlarge"></i>
+                                    <p class="w3-xlarge">MATLAB</p>
+                                </div>
+                            </div>
+
+                            <!-- R -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i
+                                        class="devicon-r-original w3-xxxlarge"></i>
+                                    <p class="w3-xlarge ">R</p>
+                                </div>
+                            </div>
+
+                            <!-- Python -->
+                            <div class="w3-col s4 w3-padding">
+                                <div class="w3-card-4 w3-padding-32 w3-center">
+                                    <i class="fab fa-python w3-xxxlarge"></i>
+                                    <p class="w3-xlarge">Python</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w3-padding-32 w3-content" id="mathematics">
+                        <h3 class="w3-text-grey">Mathematics</h3>
+                        <hr class="w3-opacity">
+
+                        <ul class="course-list">
+                            <!-- Numerical Analysis -->
+                            <li class="course-item">
+                                <i class="fas fa-calculator course-icon"></i>
+                                Numerical Analysis - Score: 4.33
+                            </li>
+
+                            <!-- Differential Equations -->
+                            <li class="course-item">
+                                <i class="fas fa-superscript course-icon"></i>
+                                Differential Equations - Score: 4.0
+                            </li>
+
+                            <!-- Stochastic Processes -->
+                            <li class="course-item">
+                                <i class="fas fa-random course-icon"></i>
+                                Stochastic Processes - Score: 4.0
+                            </li>
+
+                            <!-- Multivariable Calculus -->
+                            <li class="course-item">
+                                <i class="course-icon">&#8749;</i>
+                                Multivariable Calculus - Score: 3.67
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="w3-padding-32 w3-content" id="soft-skills">
+                        <h3 class="w3-text-grey">Soft Skills</h3>
+                        <hr class="w3-opacity">
+
+                        <ul class="skill-list">
+                            <!-- Teamwork -->
+                            <li class="skill-item">
+                                <i class="fas fa-users skill-icon"></i>
+                                Teamwork
+                            </li>
+
+                            <!-- Communication -->
+                            <li class="skill-item">
+                                <i class="fas fa-comments skill-icon"></i>
+                                Communication
+                            </li>
+
+                            <!-- Fast Worker -->
+                            <li class="skill-item">
+                                <i class="fas fa-bolt skill-icon"></i>
+                                Fast Worker
+                            </li>
+
+                            <!-- Self-Initiative -->
+                            <li class="skill-item">
+                                <i class="fas fa-lightbulb skill-icon"></i>
+                                Self-Initiative
+                            </li>
+
+                            <!-- Hardworking -->
+                            <li class="skill-item">
+                                <i class="fas fa-wrench skill-icon"></i>
+                                Hardworking
+                            </li>
+
+                            <!-- Time Management -->
+                            <li class="skill-item">
+                                <i class="fas fa-clock skill-icon"></i>
+                                Time Management
+                            </li>
+                            <li class="skill-item">
+                                <i class="fas fa-exchange-alt skill-icon"></i>
+                                Adaptability
+                            </li>
+
+                            <!-- Problem Solving -->
+                            <li class="skill-item">
+                                <i class="fas fa-puzzle-piece skill-icon"></i>
+                                Problem Solving
+                            </li>
+
+                            <!-- Creativity -->
+                            <li class="skill-item">
+                                <i class="fas fa-paint-brush skill-icon"></i>
+                                Creativity
+                            </li>
+
+                            <!-- Leadership -->
+                            <li class="skill-item">
+                                <i class="fas fa-chess-king skill-icon"></i>
+                                Leadership
+                            </li>
+
+                            <!-- Conflict Resolution -->
+                            <li class="skill-item">
+                                <i class="fas fa-balance-scale skill-icon"></i>
+                                Conflict Resolution
+                            </li>
+
+                            <!-- Critical Thinking -->
+                            <li class="skill-item">
+                                <i class="fas fa-brain skill-icon"></i>
+                                Critical Thinking
+                            </li>
+                            <!-- Customer Service -->
+                            <li class="skill-item">
+                                <i class="fas fa-headset skill-icon"></i>
+                                Customer Service
+                            </li>
+                        </ul>
+
+                    </div>
+                    </div>
+
+                <!-- Work Experience Section -->
+                <div class="w3-padding-32 w3-content" id="work-experience">
+                    <h2 class="w3-text-grey">Work Experience</h2>
+                    <hr class="w3-opacity">
+
+                    <!-- Claims Support, Desjardins Insurance -->
+                    <div class="experience-item">
+                        <h3>Claims Support</h3>
+                        <p class="w3-opacity">Desjardins Insurance, Aurora,
+                            Ontario | Date: 05/2022 - 09/2022</p>
+                        <ul>
+                            <li>Assisted in the efficient handling of
+                                misclaims and Disability Management Services
+                                (DMS) claims at Desjardins Insurance.</li>
+                            <li>Demonstrated exceptional speed and
+                                efficiency in task completion.</li>
+                            <li>Successfully completed an average of 100
+                                misclaims and 35 DMS claims per
+                                workday.</li>
+                            <li>Collaborated effectively within a team,
+                                providing assistance when needed.</li>
+                            <li>Quickly acquired and mastered various tasks
+                                within tight timeframes.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cashier/Customer Service, Walmart Canada -->
+                    <div class="experience-item">
+                        <h3>Cashier/Customer Service</h3>
+                        <p class="w3-opacity">Walmart Canada, Toronto,
+                            Ontario | Date: 05/2020 - 07/2022</p>
+                        <ul>
+                            <li>Demonstrated quick learning abilities in
+                                mastering various roles at Walmart,
+                                including cashier, self-checkout, and
+                                customer service.</li>
+                            <li>Recognized with a shining star award for
+                                consistently delivering exceptional customer
+                                service that exceeded expectations.</li>
+                            <li>Maintained a fast and efficient cashiering
+                                performance, scanning an average of 2000
+                                items per hour.</li>
+                            <li>Thrived in a large team environment,
+                                collaborating effectively with colleagues,
+                                while also demonstrating the ability to work
+                                independently.</li>
+                            <li>Provided assistance to a diverse range of
+                                customers, including those with
+                                disabilities, seniors, and individuals
+                                seeking support with online services.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Publications Section -->
+                <div class="w3-padding-32 w3-content" id="publications">
+                    <h2 class="w3-text-grey"> <i
+                            class="fa-solid fa-book"></i> Publications</h2>
+                    <hr class="w3-opacity">
+
+                    <!-- Rust for C++ Programmers -->
+                    <div class="w3-container w3-margin-bottom">
+                        <h3>Rust for C++ Programmers</h3>
+                        <p class="w3-opacity">Published: February 17,
+                            2023</p>
+                        <p>Publisher: BPB Online</p>
+                    </div>
+
+                    <!-- The Unfathomable Stage -->
+                    <div class="w3-container w3-margin-bottom">
+                        <h3>The Unfathomable Stage</h3>
+                        <p class="w3-opacity">Published: May, 2022</p>
+                        <p>Publisher: Self-published</p>
+                    </div>
+
+                    <!-- REborn -->
+                    <div class="w3-container w3-margin-bottom">
+                        <h3>REborn</h3>
+                        <p class="w3-opacity">Published: December 2,
+                            2021</p>
+                        <p>Publisher: Self-published</p>
+                    </div>
+
+                    <!-- The Epiphany -->
+                    <div class="w3-container w3-margin-bottom">
+                        <h3>The Epiphany</h3>
+                        <p class="w3-opacity">Published: March 9, 2021</p>
+                        <p>Publisher: Self-published</p>
+                    </div>
+
+                    <!-- Turbulently Troubled -->
+                    <div class="w3-container w3-margin-bottom">
+                        <h3>Turbulently Troubled</h3>
+                        <p class="w3-opacity">Published: December 7,
+                            2020</p>
+                        <p>Publisher: Self-published</p>
+                    </div>
+
+                    <!-- The Trilogy -->
+                    <div class="w3-container">
+                        <h3>The Trilogy</h3>
+                        <p class="w3-opacity">Published: December 2,
+                            2020</p>
+                        <p>Publisher: Self-published</p>
+                    </div>
+
+                </div>
+
+                <div class="w3-padding-32 w3-content" id="blog">
+                    <h2 class="w3-text-grey"><i
+                            class="fa-solid fa-newspaper"></i> Blog
+                        Articles</h2>
+                    <hr class="w3-opacity">
+                    <div class="w3-padding-32 w3-content" id="devto-articles">
+                        <h3 onclick="toggleDevToArticles()">
+                            DevTo
+                            <i id="devto-icon" class="fa fa-caret-right"></i>
+                        </h3>
+                        <div id="devto-content" style="display: none;">
+                            {% for article in devto_articles %}
+                            <div class="w3-container w3-margin-bottom">
+                                <h4>{{article.title}}</h4>
+                                <a href="{{article.link}}" target="_blank">Read
+                                    More</a>
+                                <p class="w3-opacity">Published on
+                                    {{article.pub_date}}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="w3-padding-32 w3-content"
+                            id="moka-articles">
+                            <h3 onclick="toggleMoKaArticles()">
+                                MoKa Reads Blog
+                                <i id="moka-icon" class="fa fa-caret-right"></i>
+                            </h3>
+                            <div id="moka-content" style="display: none;">
+                                {% for article in moka_articles %}
+                                <div class="w3-container w3-margin-bottom">
+                                    <h4>{{article.title}}</h4>
+                                    <a href="{{article.link}}"
+                                        target="_blank">Read More</a>
+                                    <p class="w3-opacity">Published on
+                                        {{article.pub_date}}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                        </div>
+
+                            {# <!-- Contact Section -->
+                            <div class="w3-padding-32 w3-content w3-text-grey"
+                                id="contact"
+                                style="margin-bottom:64px">
+                                <h2>Contact Me</h2>
+                                <hr class="w3-opacity">
+
+                                <div class="w3-section">
+                                    <p><i
+                                            class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i>
+                                        Chicago, US</p>
+                                    <p><i
+                                            class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i>
+                                        Phone: +00 151515</p>
+                                    <p><i
+                                            class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right">
+                                        </i> Email: mail@mail.com</p>
+                                </div>
+
+                                <p>Lets get in touch. Send me a message:</p>
+                                <form action="/action_page.php" target="_blank">
+                                    <p><input
+                                            class="w3-input w3-padding-16 w3-border"
+                                            type="text" placeholder="Name"
+                                            required
+                                            name="Name"></p>
+                                    <p><input
+                                            class="w3-input w3-padding-16 w3-border"
+                                            type="text" placeholder="Email"
+                                            required
+                                            name="Email"></p>
+                                    <p><input
+                                            class="w3-input w3-padding-16 w3-border"
+                                            type="text" placeholder="Subject"
+                                            required
+                                            name="Subject"></p>
+                                    <p><input
+                                            class="w3-input w3-padding-16 w3-border"
+                                            type="text" placeholder="Message"
+                                            required
+                                            name="Message"></p>
+                                    <p>
+                                        <button
+                                            class="w3-button w3-light-grey w3-padding-large"
+                                            type="submit">
+                                            <i class="fa fa-paper-plane"></i>
+                                            SEND MESSAGE
+                                        </button>
+                                    </p>
+                                </form>
+                                <!-- End Contact Section -->
+                            </div> #}
+
+                            <!-- Footer -->
+                            <footer
+                                class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-large"
+                                style="margin:-24px">
+                                <a href="https://twitter.com/MustafifKhan"><i
+                                        class="fa-brands fa-square-x-twitter w3-hover-opacity w3-xlarge"></i></a>
+                                <a
+                                    href="https://www.linkedin.com/in/mustafif-khan-ba71321a5/"><i
+                                        class="fa-brands fa-linkedin w3-hover-opacity w3-xlarge"></i></a>
+                                <a href="https://github.com/Mustafif/"><i
+                                        class="fa-brands fa-square-github w3-hover-opacity w3-xlarge"></i></a>
+                                <p>Mustafif Khan. All Rights Reserved. <a
+                                        href="https://github.com/Mustafif/mustafif.com">v{{version}}</a></p>
+                                <!-- End footer -->
+                            </footer>
+
+                            <!-- END PAGE CONTENT -->
+                        </div>
+
+                        <script>
+        // Open and close sidebar
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "60%";
+          document.getElementById("mySidebar").style.display = "block";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidebar").style.display = "none";
+        }
+        document.getElementById("darkModeToggle").addEventListener("click", function() {
+            const body = document.body;
+            const darkModeIcon = document.getElementById("darkModeIcon");
+
+            body.classList.toggle("dark-mode");
+
+            // Toggle between moon and sun icons
+            if (body.classList.contains("dark-mode")) {
+                darkModeIcon.classList.remove("fa-moon");
+                darkModeIcon.classList.add("fa-sun");
+                body.style.color = "white";
+            } else {
+                darkModeIcon.classList.remove("fa-sun");
+                darkModeIcon.classList.add("fa-moon");
+                body.style.color = "black";
+            }
+        });
+        function toggleDevToArticles() {
+            var content = document.getElementById("devto-content");
+            var icon = document.getElementById("devto-icon");
+
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                icon.className = "fa fa-caret-down";
+            } else {
+                content.style.display = "none";
+                icon.className = "fa fa-caret-right";
+            }
+        }
+        function toggleMoKaArticles() {
+            var content = document.getElementById("moka-content");
+            var icon = document.getElementById("moka-icon");
+    
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                icon.className = "fa fa-caret-down";
+            } else {
+                content.style.display = "none";
+                icon.className = "fa fa-caret-right";
+            }
+        }
+        </script>
+
+                    </body>
+                </html>

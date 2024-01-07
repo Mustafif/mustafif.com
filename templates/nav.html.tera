@@ -1,0 +1,33 @@
+<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge"
+    style="display:none;padding-top:150px;right:0;z-index:2"
+    id="mySidebar">
+    <a href="javascript:void(0)" onclick="closeNav()"
+        class="w3-button w3-black w3-xxxlarge w3-display-topright"
+        style="padding:0 12px;">
+        <i class="fa fa-remove"></i>
+    </a>
+    <div class="w3-bar-block w3-center">
+        <a href="/"
+            class="w3-bar-item w3-button w3-text-grey w3-hover-black"
+            onclick="closeNav()">Home</a>
+        <a href="#about"
+            class="w3-bar-item w3-button w3-text-grey w3-hover-black"
+            onclick="closeNav()">About</a>
+        <a href="#education"
+            class="w3-bar-item w3-button w3-text-grey w3-hover-black"
+            onclick="closeNav()">Education</a>
+        <a href="#my-skills"
+            class="w3-bar-item w3-button w3-text-grey w3-hover-black"
+            onclick="closeNav()">My Skills</a>
+        <a href="#work-experience"
+            class="w3-bar-item w3-button w3-text-grey w3-hover-black"
+            onclick="closeNav()">Work Experience</a>
+        <a href="#publications"
+            class="w3-bar-item w3-button w3-text-grey w3-hover-black"
+            onclick="closeNav()">Publications</a>
+        <a href="#blog"
+            class="w3-bar-item w3-button w3-text-grey w3-hover-black"
+            onclick="closeNav()">Blog</a>
+    </div>
+</nav>

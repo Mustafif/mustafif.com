@@ -4,17 +4,20 @@ use rocket::fs::NamedFile;
 use rocket::get;
 use rocket_dyn_templates::{context, Template};
 use std::path::{Path, PathBuf};
+
 #[get("/")]
 pub async fn index() -> Template {
+    let version = std::env::var("CARGO_PKG_VERSION").unwrap_or_default();
     let feed = feed().await.unwrap_or_default();
-    let devto_articles = feed.get(&Source::DevTo).unwrap();
-    let moka_articles = feed.get(&Source::MoKa).unwrap();
+    let devto = feed.get(&Source::DevTo).unwrap();
+    let mokareads = feed.get(&Source::MoKa).unwrap();
 
     Template::render(
         "index",
         context! {
-            devto_articles: devto_articles,
-            moka_articles: moka_articles
+            version: version, 
+            moka_articles: mokareads, 
+            devto_articles: devto
         },
     )
 }
