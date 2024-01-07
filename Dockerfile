@@ -3,6 +3,8 @@ FROM lukemathwalker/cargo-chef:latest-rust-latest AS chef
 
 WORKDIR home
 
+COPY . . 
+
 # Build your Rust application
 RUN cargo build --release
 
