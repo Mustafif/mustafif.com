@@ -1,6 +1,6 @@
 <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
 <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge"
-    style="display:none;padding-top:150px;right:0;z-index:2"
+    style="display:none;padding-top:75px;height: 100%;position: fixed;top: 0;right: 0;background-color: #111;z-index:2;"
     id="mySidebar">
     <a href="javascript:void(0)" onclick="closeNav()"
         class="w3-button w3-black w3-xxxlarge w3-display-topright"
