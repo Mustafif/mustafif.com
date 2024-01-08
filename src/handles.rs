@@ -5,9 +5,10 @@ use rocket::get;
 use rocket_dyn_templates::{context, Template};
 use std::path::{Path, PathBuf};
 
+const VERSION: &str = env!("CARGO_PKG_VERSION");
+
 #[get("/")]
 pub async fn index() -> Template {
-    let version = std::env::var("CARGO_PKG_VERSION").unwrap_or_default();
     let feed = feed().await.unwrap_or_default();
     let devto = feed.get(&Source::DevTo).unwrap();
     let mokareads = feed.get(&Source::MoKa).unwrap();
@@ -15,7 +16,7 @@ pub async fn index() -> Template {
     Template::render(
         "index",
         context! {
-            version: version, 
+            version: VERSION, 
             moka_articles: mokareads, 
             devto_articles: devto
         },
