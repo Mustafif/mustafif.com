@@ -37,9 +37,8 @@ pub async fn assets(file: PathBuf) -> Option<CachedNameFile> {
 
 #[post("/contact", data="<form>")]
 pub async fn contact(form: Form<ContactForm>) -> Redirect{
-    dotenv::dotenv().unwrap();
-    let username = dotenv::var("SMPT_USER").unwrap();
-    let password = dotenv::var("SMPT_PASSWORD").unwrap();
+    let username = std::env::var("SMPT_USER").unwrap();
+    let password = std::env::var("SMPT_PASSWORD").unwrap();
     let creds = Credentials::new(username, password);
     let mailer = SmtpTransport::relay("smtp.zoho.com")
     .unwrap()
