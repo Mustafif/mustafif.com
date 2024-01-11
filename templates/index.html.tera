@@ -636,7 +636,7 @@ body.dark-mode h1, body.dark-mode h2 {
 
                     </div>
 
-                    {# <!-- Contact Section -->
+                    <!-- Contact Section -->
                     <div class="w3-padding-32 w3-content w3-text-grey"
                         id="contact"
                         style="margin-bottom:64px">
@@ -645,18 +645,12 @@ body.dark-mode h1, body.dark-mode h2 {
 
                         <div class="w3-section">
                             <p><i
-                                    class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i>
-                                Chicago, US</p>
-                            <p><i
-                                    class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i>
-                                Phone: +00 151515</p>
-                            <p><i
                                     class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right">
-                                </i> Email: mail@mail.com</p>
+                                </i> Email: mustafif0929@gmail.com</p>
                         </div>
 
                         <p>Lets get in touch. Send me a message:</p>
-                        <form action="/action_page.php" target="_blank">
+                        <form>
                             <p><input
                                     class="w3-input w3-padding-16 w3-border"
                                     type="text" placeholder="Name"
@@ -680,14 +674,14 @@ body.dark-mode h1, body.dark-mode h2 {
                             <p>
                                 <button
                                     class="w3-button w3-light-grey w3-padding-large"
-                                    type="submit">
+                                    type="button" onclick="sendEmail()">
                                     <i class="fa fa-paper-plane"></i>
                                     SEND MESSAGE
                                 </button>
                             </p>
                         </form>
                         <!-- End Contact Section -->
-                    </div> #}
+                    </div>
 
                     <!-- Footer -->
                     <footer
@@ -758,6 +752,23 @@ body.dark-mode h1, body.dark-mode h2 {
                 content.style.display = "none";
                 icon.className = "fa fa-caret-right";
             }
+        }
+        function sendEmail() {
+            const form = document.querySelector('form');
+            const name = form.elements['Name'].value;
+            const email = form.elements['Email'].value;
+            const subject = form.elements['Subject'].value;
+            const message = form.elements['Message'].value;
+        
+            const mailtoUrl = `mailto:mustafif0929@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AMessage: ${message}`)}`;
+        
+            const mailtoLink = document.createElement('a');
+            mailtoLink.href = mailtoUrl;
+            mailtoLink.click();
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('subject').value = '';
+            document.getElementById('message').value = '';
         }
         </script>
 
