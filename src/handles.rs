@@ -1,10 +1,14 @@
 use crate::cached::CachedNameFile;
 use mkblogs_rss::{feed, Source};
-use rocket::fs::NamedFile;
-use rocket::get;
+use rocket::form::Form;
+use rocket::response::Redirect;
+use rocket::{fs::NamedFile, post};
+use rocket::{get, uri};
 use rocket_dyn_templates::{context, Template};
 use std::path::{Path, PathBuf};
-
+use crate::mailer::ContactForm;
+use lettre::transport::smtp::authentication::Credentials;
+use lettre::{SmtpTransport, Transport};
 const VERSION: &str = env!("CARGO_PKG_VERSION");
 
 #[get("/")]
@@ -29,4 +33,18 @@ pub async fn assets(file: PathBuf) -> Option<CachedNameFile> {
         .await
         .ok()
         .map(|file| CachedNameFile::max_age(file, 31536000))
+}
+
+#[post("/contact", data="<form>")]
+pub async fn contact(form: Form<ContactForm>) -> Redirect{
+    dotenv::dotenv().unwrap();
+    let username = dotenv::var("SMPT_USER").unwrap();
+    let password = dotenv::var("SMPT_PASSWORD").unwrap();
+    let creds = Credentials::new(username, password);
+    let mailer = SmtpTransport::relay("smtp.zoho.com")
+    .unwrap()
+    .credentials(creds)
+    .build();
+    mailer.send(&form.create_message()).unwrap();
+    Redirect::to(uri!(index))
 }
