@@ -646,9 +646,9 @@ body.dark-mode h1, body.dark-mode h2 {
                         <div class="w3-section">
                             <p><i
                                     class="fa fa-envelope fa-fw w3-xlarge w3-margin-right">
-                                </i>mustafif0929@gmail.com</p>
+                                </i><a href="mailto:mustafif0929@gmail.com">mustafif0929@gmail.com</a></p>
                         </div>
-                        <br>
+                        {# <br>
                         <p>Lets get in touch. Send me a message:</p>
                         <form action="/contact" method="post">
                             <p><input
@@ -679,7 +679,7 @@ body.dark-mode h1, body.dark-mode h2 {
                                     SEND MESSAGE
                                 </button>
                             </p>
-                        </form>
+                        </form> #}
                         <!-- End Contact Section -->
                     </div>
 

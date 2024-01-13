@@ -36,16 +36,3 @@ pub async fn assets(file: PathBuf) -> Option<CachedNameFile> {
         .map(|file| CachedNameFile::max_age(file, 31536000))
 }
 
-#[post("/contact", data="<form>")]
-pub async fn contact(form: Form<ContactForm>) -> Redirect{
-    dotenv::from_path("/etc/secrets/.env").unwrap();
-    let username = dotenv::var("SMPT_USER").unwrap();
-    let password = dotenv::var("SMPT_PASSWORD").unwrap();
-    let creds = Credentials::new(username, password);
-    let mailer = SmtpTransport::relay("smtp.zoho.com")
-    .unwrap()
-    .credentials(creds)
-    .build();
-    mailer.send(&form.create_message()).unwrap();
-    Redirect::to(uri!(index))
-}
