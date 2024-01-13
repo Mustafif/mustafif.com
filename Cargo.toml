@@ -9,8 +9,6 @@ description = "The Official mustafif.com web application"
 [dependencies]
 anyhow = "1.0.79"
 chrono = "0.4.31"
-dotenv = "0.15.0"
-lettre = "0.11.3"
 mkblogs_rss = { git = "https://github.com/Mustafif/MKBlogsRSS", version = "0.1.0" }
 rocket = "0.5.0"
 rocket_dyn_templates = { version = "0.1.0", features = ["tera"] }

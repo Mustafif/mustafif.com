@@ -1,16 +1,10 @@
 use crate::cached::CachedNameFile;
 use mkblogs_rss::{feed, Source};
-use rocket::form::Form;
-use rocket::response::Redirect;
-use rocket::{fs::NamedFile, post};
-use rocket::{get, uri};
+use rocket::fs::NamedFile;
+use rocket::get;
 use rocket_dyn_templates::{context, Template};
 use std::path::{Path, PathBuf};
-use crate::mailer::ContactForm;
-use lettre::transport::smtp::authentication::Credentials;
-use lettre::{SmtpTransport, Transport};
 const VERSION: &str = env!("CARGO_PKG_VERSION");
-
 
 #[get("/")]
 pub async fn index() -> Template {
@@ -21,8 +15,8 @@ pub async fn index() -> Template {
     Template::render(
         "index",
         context! {
-            version: VERSION, 
-            moka_articles: mokareads, 
+            version: VERSION,
+            moka_articles: mokareads,
             devto_articles: devto
         },
     )
@@ -35,4 +29,3 @@ pub async fn assets(file: PathBuf) -> Option<CachedNameFile> {
         .ok()
         .map(|file| CachedNameFile::max_age(file, 31536000))
 }
-
