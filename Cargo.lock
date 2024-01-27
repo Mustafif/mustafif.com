@@ -1078,6 +1078,7 @@ name = "mustafif_com"
 version = "0.1.0"
 dependencies = [
  "mkblogs_rss",
+ "openssl",
  "rocket",
  "rocket_dyn_templates",
 ]
