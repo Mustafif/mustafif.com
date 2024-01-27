@@ -7,13 +7,9 @@ description = "The Official mustafif.com web application"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.79"
-chrono = "0.4.31"
 mkblogs_rss = { git = "https://github.com/Mustafif/MKBlogsRSS", version = "0.1.0" }
 rocket = "0.5.0"
 rocket_dyn_templates = { version = "0.1.0", features = ["tera"] }
-serde = { version = "1.0.195", features = ["derive"] }
-tokio = { version = "1.35.1", features = ["full"] }
 
 [profile.release]
 strip = true  # Automatically strip symbols from the binary.

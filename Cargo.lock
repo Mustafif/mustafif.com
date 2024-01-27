@@ -213,9 +213,7 @@ checksum = "7f2c685bad3eb3d45a01354cedb7d5faa66194d1d58ba6e267a8de788f79db38"
 dependencies = [
  "android-tzdata",
  "iana-time-zone",
- "js-sys",
  "num-traits",
- "wasm-bindgen",
  "windows-targets 0.48.5",
 ]
 
@@ -1079,13 +1077,9 @@ dependencies = [
 name = "mustafif_com"
 version = "0.1.0"
 dependencies = [
- "anyhow",
- "chrono",
  "mkblogs_rss",
  "rocket",
  "rocket_dyn_templates",
- "serde",
- "tokio",
 ]
 
 [[package]]
@@ -2142,7 +2136,6 @@ dependencies = [
  "libc",
  "mio",
  "num_cpus",
- "parking_lot",
  "pin-project-lite",
  "signal-hook-registry",
  "socket2",
