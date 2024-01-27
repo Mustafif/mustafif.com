@@ -17,4 +17,6 @@ RUN cargo build --release
 FROM debian:buster-slim AS runtime
 WORKDIR /app
 COPY --from=builder /app/target/release/mustafif_com /usr/local/bin
+RUN apt-get update && \
+    apt-get install -y libssl-dev
 ENTRYPOINT ["/usr/local/bin/mustafif_com"]
