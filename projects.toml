@@ -1,0 +1,78 @@
+[[projects]]
+name = "TexCreate"
+start = "2021-10-22"
+technologies = ["Rust", "LaTeX", "CLI", "Asynchronous Programming"]
+description = """
+TexCreate is a LaTeX project creator developed by myself, Mustafif Khan since 2021 and is actively being maintained as my main portfolio project. 
+The project started from my laziness; I found setting up LaTeX documents annoying whenever I had something new to do (I use LaTeX over word processors). 
+I created a program to write a document for me using some prebuilt templates embedded in the program. When I wrote TexCreate, I found it very useful, and 
+it saved me a lot of time, such as when I used it for a Physics tutorial with the Lachaise template.
+
+TexCreate version 3 focuses on template modularity which in simple terms means that instead of the prebuilt templates being hardcoded into the program, they are 
+instead managed by releases with a web service. Every new major version expands on the core idea of TexCreate as a LaTeX project creator that helps ease development, 
+and with every new version the codebase increasingly becomes a lot more complex.
+"""
+gh = "https://github.com/MKProj/texcreate"
+https = "https://texcreate.mkproj.com"
+
+[[projects.subprojects]]
+name = "TexCGen"
+start = "2023-02-09"
+technologies = ["Rust", "LaTeX", "Metaprogramming"]
+description = "Template Generator for the TexCreate project utilizing the TexCore library."
+gh = "https://github.com/MKProj/texcgen"
+
+
+[[projects.subprojects]]
+name = "MKProj TexCGen"
+start = "2023-02-09"
+technologies = ["Rust", "LaTeX", "Metaprogramming"]
+description = "Template Generator for the TexCreate project customized for MKProject first party templates."
+gh = "https://github.com/MKProj/texcgen"
+
+[[projects.subprojects]]
+name = "TexCWeb"
+start = "2023-02-13"
+technologies = ["Rust", "Web Development"]
+description = "Web service of the TexCreate project."
+gh = "https://github.com/MKProj/texcweb"
+
+[[projects.subprojects]]
+name = "TexCreate Repo"
+start = "2023-02-11"
+technologies = ["Rust", "LaTeX", "Metaprogramming"]
+description = "Provides the Repo type for TexCreate as a way to manage releases."
+gh = "https://github.com/MKProj/texcreate_repo"
+
+[[projects.subprojects]]
+name = "TexCreate V3 Compiler Configuration"
+start = "2023-03-18"
+technologies = ["Rust", "LaTeX", "Metaprogramming"]
+description = "Provides the Compiler type for TexCreate to configure how a compiler builds the project."
+gh = "https://github.com/MKProj/texcreate_v3_compiler_conf"
+
+[[projects.subprojects]]
+name = "TexCreate V3 Web"
+start = "2023-03-18"
+technologies = ["Rust", "LaTeX", "Metaprogramming"]
+description = "Provides a local web application to build TexCreate projects."
+gh = "https://github.com/MKProj/texcreate_v3_compiler_conf"
+
+[[projects]]
+name = "MufiZ"
+start = "2024-01-24"
+technologies = [
+    "C",
+    "Zig",
+    "Memory Safety",
+    "Bytecode Compiler",
+    "Toy Language",
+]
+description = """
+This project aims to merge the Mufi-Lang compiler with the Zig language through the use 
+of the Zig Build system. We aim to harmoniously incorporate additional features using both 
+languages and assess their effectiveness. The Zig Build system offers convenient cross-compatibility 
+and caching, and as we progress with the integration, we can guarantee improved memory safety.
+"""
+gh = "https://github.com/Mustafif/MufiZ"
+subprojects = []

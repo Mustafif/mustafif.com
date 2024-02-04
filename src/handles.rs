@@ -1,4 +1,5 @@
 use crate::cached::CachedNameFile;
+use crate::projects::projects;
 use mkblogs_rss::{feed, Source};
 use rocket::fs::NamedFile;
 use rocket::get;
@@ -11,13 +12,15 @@ pub async fn index() -> Template {
     let feed = feed().await.unwrap_or_default();
     let devto = feed.get(&Source::DevTo).unwrap();
     let mokareads = feed.get(&Source::MoKa).unwrap();
-
+    let mut projects = projects().await.unwrap_or_default();
+    let _ = projects.projects.iter_mut().map(|x|x.change_end()).collect::<()>();
     Template::render(
         "index",
         context! {
             version: VERSION,
             moka_articles: mokareads,
-            devto_articles: devto
+            devto_articles: devto, 
+            projects: projects.projects
         },
     )
 }
