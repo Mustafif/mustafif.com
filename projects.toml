@@ -66,13 +66,15 @@ technologies = [
     "Zig",
     "Memory Safety",
     "Bytecode Compiler",
-    "Toy Language",
+    "Experimental Language",
 ]
 description = """
-This project aims to merge the Mufi-Lang compiler with the Zig language through the use 
-of the Zig Build system. We aim to harmoniously incorporate additional features using both 
-languages and assess their effectiveness. The Zig Build system offers convenient cross-compatibility 
-and caching, and as we progress with the integration, we can guarantee improved memory safety.
+MufiZ is an experimental dynamic object-oriented programming language, with its initial version 
+written in completely C and followed the book Crafting Interpreters by Bob Nystrom. The language now 
+is written with both C and Zig, with a lot of the frontend, and incremental features being written in Zig.
+The language is growing to be more mature, and we are working towards a goal of making it a 
+choice for mathematical computation. 
 """
 gh = "https://github.com/Mustafif/MufiZ"
+https = "https://mufiz.mustafif.com"
 subprojects = []

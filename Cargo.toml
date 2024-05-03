@@ -1,13 +1,13 @@
 [package]
 name = "mustafif_com"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "The Official mustafif.com web application"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-mkblogs_rss = { git = "https://github.com/Mustafif/MKBlogsRSS", version = "0.1.0" }
+mkblogs_rss = { git = "https://github.com/Mustafif/MKBlogsRSS", version = "0.1.2" }
 rocket = "0.5.0"
 rocket_dyn_templates = { version = "0.1.0", features = ["tera"] }
 serde = "1.0.196"

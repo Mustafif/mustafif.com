@@ -3,73 +3,7 @@
     <head>
         {% include "header" %}
         <style>
-        body, h1,h2,h3,h4,h5,h6 {font-family: "Courier New", sans-serif; }
-        .w3-row-padding img {margin-bottom: 12px}
-        .bgimg {
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-image: url('/assets/headshot.jpg');
-          min-height: 100%;
-        }
-        /* Dark Mode */
-body.dark-mode {
-    background-color: #000;
-    color: #fff;
-}
-
-h1, h2 {
-    color: inherit; /* Inherit text color from the parent (body) */
-}
-
-body.dark-mode h1, body.dark-mode h2 {
-    color: white; /* Text color for h1 and h2 in dark mode */
-}
-
-#darkModeToggle {
-    position: absolute;
-    margin: 30px;
-}
-        /* Light mode styles for w3-card-4 */
-        .w3-card-4 {
-            background-color: #fff; /* Set the background color for light mode */
-            color: #333; /* Set the text color for light mode */
-            /* Add any other light mode styles as needed */
-        }
-
-        /* Dark mode styles for w3-card-4 */
-        body.dark-mode .w3-card-4 {
-                background-color: #333; /* Set the background color for dark mode */
-                color: #fff; /* Set the text color for dark mode */
-                /* Add any other dark mode styles as needed */
-            }
-            .course-list {
-                list-style: none;
-                padding: 0;
-            }
-    
-            .course-item {
-                margin-bottom: 20px;
-            }
-    
-            .course-icon {
-                font-size: 24px;
-                margin-right: 10px;
-            }
-
-            .skill-list {
-                list-style: none;
-                padding: 0;
-            }
-    
-            .skill-item {
-                margin-bottom: 20px;
-            }
-    
-            .skill-icon {
-                font-size: 24px;
-                margin-right: 10px;
-            }
+            body,h1,h2,h3,h4,h5,h6{font-family:"Courier New",sans-serif}.w3-row-padding img{margin-bottom:12px}.bgimg{background-position:center;background-repeat:no-repeat;background-size:cover;background-image:url('/assets/headshot.jpg');min-height:100%}body.dark-mode{background-color:#000;color:#fff}h1,h2{color:inherit}body.dark-mode h1,body.dark-mode h2{color:#fff}#darkModeToggle{position:absolute;margin:30px}.w3-card-4{background-color:#fff;color:#333}body.dark-mode .w3-card-4{background-color:#333;color:#fff}.course-list,.skill-list{list-style:none;padding:0}.course-item,.skill-item{margin-bottom:20px}.course-icon,.skill-icon{font-size:24px;margin-right:10px}.language-card{position:relative;cursor:pointer}.language-card:hover::after{content:attr(title);position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);background-color:rgba(0,0,0,.8);color:#fff;padding:8px 16px;border-radius:4px;font-size:14px;white-space:nowrap}
         </style>
     </head>
 
@@ -188,15 +122,6 @@ body.dark-mode h1, body.dark-mode h2 {
             </p>
 
             <p>
-                Additionally, I aim to promote awareness of the Zig
-                programming language through my upcoming book, Zig
-                Unleashed. This will be my first book with further editions
-                for each new version, except patches (e.g., v0.11.1). This
-                will help developers from backgrounds in C, C++, and Rust to
-                bring Zig more into the mainstream.
-            </p>
-
-            <p>
                 My interests in programming and poetry enable me to delve
                 into the intricacies of life and the human experience. I
                 aspire to create work that motivates others to pursue their
@@ -230,7 +155,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- Rust -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="4 Years of Experience">
                                 <i class="fab fa-rust w3-xxxlarge"></i>
                                 <p class="w3-xlarge">Rust</p>
                             </div>
@@ -239,7 +165,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- Rocket -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="3 Years of Experience">
                                 <i class="fas fa-rocket w3-xxxlarge"></i>
                                 <p class="w3-xlarge">Rocket</p>
                             </div>
@@ -248,7 +175,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- Zig -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="1 Year of Experience">
                                 <i
                                     class="devicon-zig-original w3-xxxlarge"></i>
                                 <p class="w3-xlarge">Zig</p>
@@ -258,7 +186,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- C -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="2 Years of Experience">
                                 <i class="devicon-c-plain w3-xxxlarge"></i>
                                 <p class="w3-xlarge">C</p>
                             </div>
@@ -267,7 +196,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- C++ -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="2 Years of Experience">
                                 <i
                                     class="devicon-cplusplus-plain w3-xxxlarge"></i>
                                 <p class="w3-xlarge">C++</p>
@@ -277,7 +207,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- Bash -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="2 Years of Experience">
                                 <i
                                     class="devicon-bash-plain w3-xxxlarge"></i>
                                 <p class="w3-xlarge">Bash</p>
@@ -287,7 +218,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- Git -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="4 Years of Experience">
                                 <i
                                     class="devicon-git-plain w3-xxxlarge"></i>
                                 <p class="w3-xlarge">Git</p>
@@ -297,7 +229,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- GitHub -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="4 Years of Experience">
                                 <i class="fab fa-github w3-xxxlarge"></i>
                                 <p class="w3-xlarge">GitHub</p>
                             </div>
@@ -306,7 +239,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- Linux -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="5 Years of Experience">
                                 <i
                                     class="devicon-linux-plain w3-xxxlarge"></i>
                                 <p class="w3-xlarge">Linux</p>
@@ -315,7 +249,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- Markdown -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="5 Years of Experience">
                                 <i class="fab fa-markdown w3-xxxlarge"></i>
                                 <p class="w3-xlarge">Markdown</p>
                             </div>
@@ -324,7 +259,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- HTML/CSS -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="6 Years of Expereince">
                                 <i class="fab fa-html5 w3-xxxlarge"></i>
                                 <p class="w3-xlarge">HTML/CSS</p>
                             </div>
@@ -333,7 +269,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- LaTeX -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="4 Years of Experience">
                                 <i
                                     class="devicon-latex-original w3-xxxlarge"></i>
                                 <p class="w3-xlarge">LaTeX</p>
@@ -343,7 +280,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- MATLAB -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="3 Years of Experience">
                                 <i
                                     class="devicon-matlab-plain w3-xxxlarge"></i>
                                 <p class="w3-xlarge">MATLAB</p>
@@ -353,7 +291,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- R -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="2 Years of Experience">
                                 <i
                                     class="devicon-r-original w3-xxxlarge"></i>
                                 <p class="w3-xlarge ">R</p>
@@ -363,7 +302,8 @@ body.dark-mode h1, body.dark-mode h2 {
                         <!-- Python -->
                         <div class="w3-col s4 w3-padding w3-mobile">
                             <div
-                                class="w3-card-4 w3-padding-32 w3-center w3-mobile">
+                                class="language-card w3-card-4 w3-padding-32 w3-center w3-mobile"
+                                title="5 Years of Experience">
                                 <i class="fab fa-python w3-xxxlarge"></i>
                                 <p class="w3-xlarge">Python</p>
                             </div>
@@ -380,25 +320,29 @@ body.dark-mode h1, body.dark-mode h2 {
                     <!-- Numerical Analysis -->
                     <li class="course-item">
                         <i class="fas fa-calculator course-icon"></i>
-                        Numerical Analysis - Score: 4.33
+                        Numerical Analysis - 4.33
                     </li>
 
                     <!-- Differential Equations -->
                     <li class="course-item">
                         <i class="fas fa-superscript course-icon"></i>
-                        Differential Equations - Score: 4.0
+                        Differential Equations - 4.0
+                    </li>
+
+                    <li class="course-item">
+                        <i class="fas fa-square-root-alt course-icon"></i>
+                        Partial Differential Equations - 4.33
                     </li>
 
                     <!-- Stochastic Processes -->
                     <li class="course-item">
                         <i class="fas fa-random course-icon"></i>
-                        Stochastic Processes - Score: 4.0
+                        Stochastic Processes - 4.0
                     </li>
 
-                    <!-- Multivariable Calculus -->
                     <li class="course-item">
-                        <i class="course-icon">&#8749;</i>
-                        Multivariable Calculus - Score: 3.67
+                        <i class="devicon-matlab-plain course-icon"></i>
+                        Computational Methods in Math - 4.33
                     </li>
                 </ul>
             </div>
@@ -579,9 +523,8 @@ body.dark-mode h1, body.dark-mode h2 {
                                 href="{{sub.gh}}">{{sub.gh}}</a></p>
                         <p>{{sub.description}}</p>
                     </div>
-                    </div>
-                    {% endfor %} #}
-                
+                </div>
+                {% endfor %} #}
             </div>
             {% endfor %}
         </div>
@@ -688,81 +631,97 @@ body.dark-mode h1, body.dark-mode h2 {
                         {% endfor %}
                     </div>
 
-                </div>
+                    <div class="w3-padding-32 w3-content" id="mufiz-articles">
+                        <h3 onclick="toggleMufizArticles()">MufiZ Blog <i
+                                id="mufiz-icon" class="fa fa-caret-right"></i>
+                        </h3>
+                        <div id="mufiz-content" style="display: none;">
+                            {% for article in mufiz_articles %}
+                            <div class="w3-container w3-margin-bottom">
+                                <h4>{{article.title}}</h4>
+                                <a href="{{article.link}}"
+                                    target="_blank">Read More</a>
+                                <p class="w3-opacity ">Published on
+                                    {{article.pub_date}}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
 
-                <!-- Contact Section -->
-                <div
-                    class="w3-padding-32 w3-content w3-text-grey"
-                    id="contact"
-                    style="margin-bottom:64px">
-                    <h2>Contact Me</h2>
-                    <hr class="w3-opacity">
-
-                    <div class="w3-section">
-                        <p><i
-                                class="fa fa-envelope fa-fw w3-xlarge w3-margin-right">
-                            </i><a
-                                href="mailto:mustafif0929@gmail.com">mustafif0929@gmail.com</a></p>
                     </div>
-                    {# <br>
-                    <p>Lets get in touch. Send me a message:</p>
-                    <form action="/contact" method="post">
-                        <p><input
-                                class="w3-input w3-padding-16 w3-border"
-                                type="text" placeholder="Name"
-                                required
-                                name="name"></p>
-                        <p><input
-                                class="w3-input w3-padding-16 w3-border"
-                                type="text" placeholder="Email"
-                                required
-                                name="email"></p>
-                        <p><input
-                                class="w3-input w3-padding-16 w3-border"
-                                type="text"
-                                placeholder="Subject"
-                                required
-                                name="subject"></p>
-                        <p><input
-                                class="w3-input w3-padding-16 w3-border"
-                                type="text"
-                                placeholder="Message"
-                                required
-                                name="message"></p>
-                        <p>
-                            <button
-                                class="w3-button w3-light-grey w3-padding-large"
-                                type="submit">
-                                <i
-                                    class="fa fa-paper-plane"></i>
-                                SEND MESSAGE
-                            </button>
-                        </p>
-                    </form> #}
-                    <!-- End Contact Section -->
+
+                    <!-- Contact Section -->
+                    <div
+                        class="w3-padding-32 w3-content w3-text-grey"
+                        id="contact"
+                        style="margin-bottom:64px">
+                        <h2>Contact Me</h2>
+                        <hr class="w3-opacity">
+
+                        <div class="w3-section">
+                            <p><i
+                                    class="fa fa-envelope fa-fw w3-xlarge w3-margin-right">
+                                </i><a
+                                    href="mailto:mustafif0929@gmail.com">mustafif0929@gmail.com</a></p>
+                        </div>
+                        {# <br>
+                        <p>Lets get in touch. Send me a message:</p>
+                        <form action="/contact" method="post">
+                            <p><input
+                                    class="w3-input w3-padding-16 w3-border"
+                                    type="text" placeholder="Name"
+                                    required
+                                    name="name"></p>
+                            <p><input
+                                    class="w3-input w3-padding-16 w3-border"
+                                    type="text" placeholder="Email"
+                                    required
+                                    name="email"></p>
+                            <p><input
+                                    class="w3-input w3-padding-16 w3-border"
+                                    type="text"
+                                    placeholder="Subject"
+                                    required
+                                    name="subject"></p>
+                            <p><input
+                                    class="w3-input w3-padding-16 w3-border"
+                                    type="text"
+                                    placeholder="Message"
+                                    required
+                                    name="message"></p>
+                            <p>
+                                <button
+                                    class="w3-button w3-light-grey w3-padding-large"
+                                    type="submit">
+                                    <i
+                                        class="fa fa-paper-plane"></i>
+                                    SEND MESSAGE
+                                </button>
+                            </p>
+                        </form> #}
+                        <!-- End Contact Section -->
+                    </div>
+
+                    <!-- Footer -->
+                    <footer
+                        class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-large"
+                        style="margin:-24px">
+                        <a
+                            href="https://twitter.com/MustafifKhan"><i
+                                class="fa-brands fa-square-x-twitter w3-hover-opacity w3-xlarge"></i></a>
+                        <a
+                            href="https://www.linkedin.com/in/mustafif-khan-ba71321a5/"><i
+                                class="fa-brands fa-linkedin w3-hover-opacity w3-xlarge"></i></a>
+                        <a href="https://github.com/Mustafif/"><i
+                                class="fa-brands fa-square-github w3-hover-opacity w3-xlarge"></i></a>
+                        <p>Mustafif Khan. All Rights Reserved. <a
+                                href="https://github.com/Mustafif/mustafif.com">v{{version}}</a></p>
+                        <!-- End footer -->
+                    </footer>
+
+                    <!-- END PAGE CONTENT -->
                 </div>
 
-                <!-- Footer -->
-                <footer
-                    class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-large"
-                    style="margin:-24px">
-                    <a
-                        href="https://twitter.com/MustafifKhan"><i
-                            class="fa-brands fa-square-x-twitter w3-hover-opacity w3-xlarge"></i></a>
-                    <a
-                        href="https://www.linkedin.com/in/mustafif-khan-ba71321a5/"><i
-                            class="fa-brands fa-linkedin w3-hover-opacity w3-xlarge"></i></a>
-                    <a href="https://github.com/Mustafif/"><i
-                            class="fa-brands fa-square-github w3-hover-opacity w3-xlarge"></i></a>
-                    <p>Mustafif Khan. All Rights Reserved. <a
-                            href="https://github.com/Mustafif/mustafif.com">v{{version}}</a></p>
-                    <!-- End footer -->
-                </footer>
-
-                <!-- END PAGE CONTENT -->
-            </div>
-
-            <script>
+                <script>
         // Open and close sidebar
         function openNav() {
           document.getElementById("mySidebar").style.width = "60%";
@@ -813,10 +772,11 @@ body.dark-mode h1, body.dark-mode h2 {
                 icon.className = "fa fa-caret-right";
             }
         }
-        function togglesubs() {
-            var content = document.getElementById("subproj-content");
-            var icon = document.getElementById("subproj-icon");
-    
+
+        function toggleMufizArticles(){
+            var content = document.getElementById("mufiz-content");
+            var icon = document.getElementById("mufiz-icon");
+
             if (content.style.display === "none") {
                 content.style.display = "block";
                 icon.className = "fa fa-caret-down";
@@ -827,5 +787,5 @@ body.dark-mode h1, body.dark-mode h2 {
         }
         </script>
 
-        </body>
-    </html>
+            </body>
+        </html>

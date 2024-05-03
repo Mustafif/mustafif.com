@@ -12,6 +12,7 @@ pub async fn index() -> Template {
     let feed = feed().await.unwrap_or_default();
     let devto = feed.get(&Source::DevTo).unwrap();
     let mokareads = feed.get(&Source::MoKa).unwrap();
+    let mufiz = feed.get(&Source::Mufiz).unwrap();
     let mut projects = projects().await.unwrap_or_default();
     let _ = projects.projects.iter_mut().map(|x|x.change_end()).collect::<()>();
     Template::render(
@@ -20,6 +21,7 @@ pub async fn index() -> Template {
             version: VERSION,
             moka_articles: mokareads,
             devto_articles: devto, 
+            mufiz_articles: mufiz,
             projects: projects.projects
         },
     )
