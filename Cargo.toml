@@ -1,5 +1,5 @@
 [package]
-name = "mustafif_com"
+name = "mustafif-com"
 version = "0.2.0"
 edition = "2021"
 description = "The Official mustafif.com web application"
@@ -16,7 +16,7 @@ shuttle-rocket = "0.46.0"
 shuttle-runtime = "0.46.0"
 toml = "0.8.8"
 [profile.release]
-strip = true  # Automatically strip symbols from the binary.
-lto = true # Enables link time optimizations to optimize at link-stage
+strip = true      # Automatically strip symbols from the binary.
+lto = true        # Enables link time optimizations to optimize at link-stage
 codegen-units = 1 # allows for maximum size reduction optimizations
-panic = "abort" # reduces size of panic unwind backtrace
+panic = "abort"   # reduces size of panic unwind backtrace
