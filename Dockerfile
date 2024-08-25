@@ -1,7 +1,7 @@
 # Use the Rust base image
 FROM lukemathwalker/cargo-chef:latest-rust-latest AS chef
 
-WORKDIR /home
+WORKDIR home
 
 COPY . .
 
@@ -12,4 +12,4 @@ RUN cargo build --release
 EXPOSE 8000
 
 # Set the entry point to run your application
-CMD ["./target/release/mustafif_com"]
+CMD ["./target/release/mustafif-com"]
