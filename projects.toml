@@ -12,51 +12,9 @@ TexCreate version 3 focuses on template modularity which in simple terms means t
 instead managed by releases with a web service. Every new major version expands on the core idea of TexCreate as a LaTeX project creator that helps ease development, 
 and with every new version the codebase increasingly becomes a lot more complex.
 """
-gh = "https://github.com/MKProj/texcreate"
+gh = "https://github.com/Mustafif/texcreate"
 https = "https://texcreate.mkproj.com"
-
-[[projects.subprojects]]
-name = "TexCGen"
-start = "2023-02-09"
-technologies = ["Rust", "LaTeX", "Metaprogramming"]
-description = "Template Generator for the TexCreate project utilizing the TexCore library."
-gh = "https://github.com/MKProj/texcgen"
-
-
-[[projects.subprojects]]
-name = "MKProj TexCGen"
-start = "2023-02-09"
-technologies = ["Rust", "LaTeX", "Metaprogramming"]
-description = "Template Generator for the TexCreate project customized for MKProject first party templates."
-gh = "https://github.com/MKProj/texcgen"
-
-[[projects.subprojects]]
-name = "TexCWeb"
-start = "2023-02-13"
-technologies = ["Rust", "Web Development"]
-description = "Web service of the TexCreate project."
-gh = "https://github.com/MKProj/texcweb"
-
-[[projects.subprojects]]
-name = "TexCreate Repo"
-start = "2023-02-11"
-technologies = ["Rust", "LaTeX", "Metaprogramming"]
-description = "Provides the Repo type for TexCreate as a way to manage releases."
-gh = "https://github.com/MKProj/texcreate_repo"
-
-[[projects.subprojects]]
-name = "TexCreate V3 Compiler Configuration"
-start = "2023-03-18"
-technologies = ["Rust", "LaTeX", "Metaprogramming"]
-description = "Provides the Compiler type for TexCreate to configure how a compiler builds the project."
-gh = "https://github.com/MKProj/texcreate_v3_compiler_conf"
-
-[[projects.subprojects]]
-name = "TexCreate V3 Web"
-start = "2023-03-18"
-technologies = ["Rust", "LaTeX", "Metaprogramming"]
-description = "Provides a local web application to build TexCreate projects."
-gh = "https://github.com/MKProj/texcreate_v3_compiler_conf"
+subprojects = []
 
 [[projects]]
 name = "MufiZ"
@@ -77,4 +35,21 @@ choice for mathematical computation.
 """
 gh = "https://github.com/Mustafif/MufiZ"
 https = "https://mufiz.mustafif.com"
+subprojects = []
+
+[[projects]]
+name = "QuickFetch"
+start = "2024-06-24"
+technologies = [
+    "Rust", 
+    "Networking", 
+    "Asynchronous Programming", 
+    "Concurrency"
+]
+description = """
+This library is built to handle multiple requests within a Client (reqwest client which will handle it all under a Client Pool) , cache the response results, and handle these asynchronously.
+
+The goal is to be a one-stop shop for handling local package manager development to handle multiple packages with a local cache to easily update, get and remove the different responses.
+"""
+gh = "https://github.com/Moka-Reads/QuickFetch"
 subprojects = []

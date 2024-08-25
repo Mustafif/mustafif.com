@@ -346,145 +346,54 @@
                     </li>
                 </ul>
             </div>
-
-            <div class="w3-padding-32 w3-content" id="soft-skills">
-                <h3 class="w3-text-grey">Soft Skills</h3>
+        
+            <div class="w3-padding-32 w3-content" id="licenses">
+                <h3 class="w3-text-grey">Licenses</h3>
                 <hr class="w3-opacity">
-
-                <ul class="skill-list">
-                    <!-- Teamwork -->
-                    <li class="skill-item">
-                        <i class="fas fa-users skill-icon"></i>
-                        Teamwork
+            
+                <ul class="course-list">
+                    <!-- License 1 -->
+                    <li class="course-item">
+                        <i class="fas fa-id-card course-icon"></i>
+                        OTL (Other Than Life) Ontario License
                     </li>
-
-                    <!-- Communication -->
-                    <li class="skill-item">
-                        <i class="fas fa-comments skill-icon"></i>
-                        Communication
-                    </li>
-
-                    <!-- Fast Worker -->
-                    <li class="skill-item">
-                        <i class="fas fa-bolt skill-icon"></i>
-                        Fast Worker
-                    </li>
-
-                    <!-- Self-Initiative -->
-                    <li class="skill-item">
-                        <i class="fas fa-lightbulb skill-icon"></i>
-                        Self-Initiative
-                    </li>
-
-                    <!-- Hardworking -->
-                    <li class="skill-item">
-                        <i class="fas fa-wrench skill-icon"></i>
-                        Hardworking
-                    </li>
-
-                    <!-- Time Management -->
-                    <li class="skill-item">
-                        <i class="fas fa-clock skill-icon"></i>
-                        Time Management
-                    </li>
-                    <li class="skill-item">
-                        <i class="fas fa-exchange-alt skill-icon"></i>
-                        Adaptability
-                    </li>
-
-                    <!-- Problem Solving -->
-                    <li class="skill-item">
-                        <i class="fas fa-puzzle-piece skill-icon"></i>
-                        Problem Solving
-                    </li>
-
-                    <!-- Creativity -->
-                    <li class="skill-item">
-                        <i class="fas fa-paint-brush skill-icon"></i>
-                        Creativity
-                    </li>
-
-                    <!-- Leadership -->
-                    <li class="skill-item">
-                        <i class="fas fa-chess-king skill-icon"></i>
-                        Leadership
-                    </li>
-
-                    <!-- Conflict Resolution -->
-                    <li class="skill-item">
-                        <i class="fas fa-balance-scale skill-icon"></i>
-                        Conflict Resolution
-                    </li>
-
-                    <!-- Critical Thinking -->
-                    <li class="skill-item">
-                        <i class="fas fa-brain skill-icon"></i>
-                        Critical Thinking
-                    </li>
-                    <!-- Customer Service -->
-                    <li class="skill-item">
-                        <i class="fas fa-headset skill-icon"></i>
-                        Customer Service
+            
+                    <!-- License 2 -->
+                    <li class="course-item">
+                        <i class="fas fa-id-card course-icon"></i>
+                        Alberta General Level 1 License
                     </li>
                 </ul>
-
             </div>
-        </div>
-
-        <!-- Work Experience Section -->
-        <div class="w3-padding-32 w3-content" id="work-experience">
-            <h2 class="w3-text-grey">Work Experience</h2>
-            <hr class="w3-opacity">
-
-            <!-- Claims Support, Desjardins Insurance -->
-            <div class="experience-item">
-                <h3>Claims Support</h3>
-                <p class="w3-opacity">Desjardins Insurance, Aurora,
-                    Ontario | Date: 05/2022 - 09/2022</p>
-                <ul>
-                    <li>Assisted in the efficient handling of
-                        misclaims and Disability Management Services
-                        (DMS) claims at Desjardins Insurance.</li>
-                    <li>Demonstrated exceptional speed and
-                        efficiency in task completion.</li>
-                    <li>Successfully completed an average of 100
-                        misclaims and 35 DMS claims per
-                        workday.</li>
-                    <li>Collaborated effectively within a team,
-                        providing assistance when needed.</li>
-                    <li>Quickly acquired and mastered various tasks
-                        within tight timeframes.</li>
+            
+            <div class="w3-padding-32 w3-content" id="research-interests">
+                <h3 class="w3-text-grey">Research Interests</h3>
+                <hr class="w3-opacity">
+            
+                <ul class="course-list">
+                    <!-- Research Interest 1 -->
+                    <li class="course-item">
+                        <i class="fas fa-microscope course-icon"></i>
+                        Memory Safety
+                    </li>
+            
+                    <!-- Research Interest 2 -->
+                    <li class="course-item">
+                        <i class="fas fa-microscope course-icon"></i>
+                        Mathematical Models on Financial Derivatives
+                    </li>
+            
+                    <!-- Research Interest 3 -->
+                    <li class="course-item">
+                        <i class="fas fa-microscope course-icon"></i>
+                        Objectivity in Cryptocurrency
+                    </li>
                 </ul>
             </div>
+            
+        
 
-            <!-- Cashier/Customer Service, Walmart Canada -->
-            <div class="experience-item">
-                <h3>Cashier/Customer Service</h3>
-                <p class="w3-opacity">Walmart Canada, Toronto,
-                    Ontario | Date: 05/2020 - 07/2022</p>
-                <ul>
-                    <li>Demonstrated quick learning abilities in
-                        mastering various roles at Walmart,
-                        including cashier, self-checkout, and
-                        customer service.</li>
-                    <li>Recognized with a shining star award for
-                        consistently delivering exceptional customer
-                        service that exceeded expectations.</li>
-                    <li>Maintained a fast and efficient cashiering
-                        performance, scanning an average of 2000
-                        items per hour.</li>
-                    <li>Thrived in a large team environment,
-                        collaborating effectively with colleagues,
-                        while also demonstrating the ability to work
-                        independently.</li>
-                    <li>Provided assistance to a diverse range of
-                        customers, including those with
-                        disabilities, seniors, and individuals
-                        seeking support with online services.</li>
-                </ul>
-            </div>
-        </div>
-
+        
         <div class="w3-padding-32 w3-content" id="projects">
             <h2 class="w3-text-grey"> <i
                     class="fa-solid fa-diagram-project"></i> Projects</h2>
@@ -498,33 +407,13 @@
                         class="fa-brands fa-square-github w3-hover-opacity w3-xlarge"></i>
                     <a
                         href="{{p.gh}}">{{p.gh}}</a></p>
-                {% if p.https != "" %}
+                {% if p.https %}
                 <p><i
                         class="fa-solid fa-globe w3-hover-opacity w3-xlarge"></i>
                     <a
                         href="{{p.https}}">{{p.https}}</a></p>
                 {% endif %}
                 <p>{{p.description}}</p>
-                {# <h4 onclick="togglesubs()">
-                    <strong>{{p.name}} SubProjects</strong>
-                    <i id="subproj-icon" class="fa fa-caret-right"></i>
-                </h4>
-                <div id="subproj-content" style="display: none;">
-                    {% for sub in p.subprojects %}
-                    <div class="w3-container w3-margin-bottom">
-                        <h5>{{sub.name}}</h5>
-                        <p class="w3-opacity">{{sub.start}} -
-                            {{sub.end}}</p>
-                        <p><i>{{sub.technologies |
-                                join(sep=", ")}}</i></p>
-                        <p><i
-                                class="fa-brands fa-square-github w3-hover-opacity w3-large"></i>
-                            <a
-                                href="{{sub.gh}}">{{sub.gh}}</a></p>
-                        <p>{{sub.description}}</p>
-                    </div>
-                </div>
-                {% endfor %} #}
             </div>
             {% endfor %}
         </div>
